@@ -1,12 +1,12 @@
-import ContactUs from '@/components/ContactUs/ContactUs'
-import React from 'react'
+import ContactUs from "@/components/ContactUs/ContactUs";
+import React from "react";
 
 function page() {
   return (
     <>
-    <ContactUs/>
+      <ContactUs />
     </>
-  )
+  );
 }
 
-export default page
+export default page;
