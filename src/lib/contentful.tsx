@@ -1,7 +1,6 @@
 
 
 var contentful = require("contentful");
-const {space} = require("postcss/lib/list")
 
 const client = contentful.createClient({
   accessToken : process.env.CONTENTFUL_ACCESS_TOKEN ,

@@ -17,7 +17,6 @@ async function getData() {
 
 export default getData;
 
-
 export async function getImages(asset_id: any) {
   try {
     const url = `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/assets/${asset_id}?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`;
@@ -34,4 +33,3 @@ export async function getImages(asset_id: any) {
     console.log(err);
   }
 }
-

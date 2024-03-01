@@ -20,7 +20,7 @@ async function Programs() {
         {programsData.map((item: any, index: number) => {
           return (
             <>
-              <div className="sm:w-80 sm:h-80 w-64 h-72 p-6  flex flex-col justify-center items-center rounded-xl bg-white shadow-xl">
+              <div className="sm:w-80 sm:h-80 w-64 h-72 p-6  flex flex-col justify-center items-center rounded-xl bg-white shadow-xl cursor-pointer">
                 <h3 className=" text-xl sm:text-2xl text-center font-medium my-4">
                   {item.fields.title}
                 </h3>
