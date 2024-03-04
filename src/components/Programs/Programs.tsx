@@ -1,5 +1,6 @@
 import React from "react";
 import getData from "@/lib/getData";
+import Link from "next/link";
 
 async function Programs() {
   const data = await getData();
@@ -17,18 +18,22 @@ async function Programs() {
       </div>
 
       <div className="flex flex-wrap mt-6 gap-8 mx-10 justify-center items-center w-11/12 mb-10">
-        {programsData.map((item: any, index: number) => {
+        {programsData.map((item: any) => {
           return (
-            <>
-              <div className="sm:w-80 sm:h-80 w-64 h-72 p-6  flex flex-col justify-center items-center rounded-xl bg-white shadow-xl cursor-pointer">
+            <Link
+              key={item.fields.slug}
+              href={`/programs/${item.fields.slug}`}
+              className={`hover:scale-110 transition-all ease-in-out duration-300 delay-100`}
+            >
+              <div className="sm:w-80 sm:h-80 w-64 h-72 p-6  flex flex-col justify-center items-center rounded-xl  shadow-md bg-white shadow-red-500 cursor-pointer">
                 <h3 className=" text-xl sm:text-2xl text-center font-medium my-4">
                   {item.fields.title}
                 </h3>
-                <p className="  w-64 h-40 text-center overflow-hidden p-2 text-stone-950">
+                <p className="w-64 h-40 text-center overflow-hidden p-2 text-stone-950">
                   {item.fields.description}
                 </p>
               </div>
-            </>
+            </Link>
           );
         })}
       </div>
