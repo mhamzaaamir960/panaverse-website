@@ -2,7 +2,7 @@ import React from "react";
 import getData from "@/lib/getData";
 import ProgramsData from "@/components/ProgramsData/ProgramsData";
 
-async function page({ params }: { params: { slug: string } }) {
+async function page({ params }: { params: { slug2: string } }) {
   const data = await getData();
   const programsData = data.items.filter(
     (item: any) => item.sys.contentType.sys.id === "programs"
