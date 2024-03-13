@@ -4,7 +4,7 @@ import Link from "next/link";
 
 async function Programs() {
   const data = await getData();
-  const programsData = data.items.filter(
+  const programsData = await data.items.filter(
     (item: any) => item.sys.contentType.sys.id === "programs"
   );
   // console.log(programsData)

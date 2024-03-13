@@ -33,3 +33,20 @@ export async function getImages(asset_id: any) {
     console.log(err);
   }
 }
+
+export async function getHeroSectionData() {
+  try {
+    const url = `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries/5Jy3vOgkmz8G0hPdSk2WvL
+?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`;
+
+    const res = await fetch(url, { cache: "no-store" });
+    const data = await res.json();
+    if (!res.ok) {
+      console.log("failed to fetch data");
+      throw new Error("Failed to fetch data");
+    }
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+}

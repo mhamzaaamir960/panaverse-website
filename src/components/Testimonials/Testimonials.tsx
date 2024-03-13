@@ -1,29 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import getData from "@/lib/getData";
+import getData, { getImages } from "@/lib/getData";
 
 async function Testimonials() {
-  async function getImages(asset_id: any) {
-    try {
-      const url = `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/assets/${asset_id}?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`;
-
-      const res = await fetch(url, { cache: "no-store" });
-      const data = await res.json();
-
-      if (!res.ok) {
-        console.log("failed to fetch data");
-        throw new Error("Failed to fetch data");
-      }
-      return "https:" + data.fields.file.url;
-    } catch (err) {
-      console.log(err);
-    }
-  }
   const data = await getData();
   const testimonialsData = await data.items.filter(
     (item: any) => item.sys.contentType.sys.id === "testimonials"
   );
-  console.log(testimonialsData[0]);
   return (
     <section className="w-full relative min-h-[600px] bg-primary flex flex-col items-center ">
       <div className="text-center flex flex-col ">

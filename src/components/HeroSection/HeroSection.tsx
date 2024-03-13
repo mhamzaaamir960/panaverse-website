@@ -3,27 +3,10 @@ import Image from "next/image";
 import herosection2 from "@/assets/herosection2.jpg";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import Button from "./Button";
-
-async function getData() {
-  try {
-    const url = `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries/5Jy3vOgkmz8G0hPdSk2WvL
-?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`;
-
-    const res = await fetch(url, { cache: "no-store" });
-    const data = await res.json();
-    if (!res.ok) {
-      console.log("failed to fetch data");
-      throw new Error("Failed to fetch data");
-    }
-    return data;
-  } catch (err) {
-    console.log(err);
-  }
-}
+import { getHeroSectionData } from "@/lib/getData";
 
 async function HeroSection() {
-  const data = await getData();
-  // console.log(data.fields)
+  const data = await getHeroSectionData();
   return (
     <main className=" w-full  min-h-[400px] lg:min-h-[620px] 3xl:min-h-[800px] bg-primary relative mt-20 flex justify-center items-center  mb-10 ">
       <div className=" w-11/12 3xl:w-4/5 p-2 grid grid-cols-1 md:grid-cols-2 items-center mt-10 gap-4 ">

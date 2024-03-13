@@ -1,42 +1,37 @@
-"use client";
 import getData from "@/lib/getData";
-import Link from "next/link";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@radix-ui/react-accordion";
 import React from "react";
-import { PiVideoFill } from "react-icons/pi";
+import Link from "next/link";
+import Dropdown from "./Dropdown";
 
 async function Basics() {
   const data = await getData();
-  const learnBasics = await data.items.filter(
+  const basics = await data.items.filter(
     (item: any) => item.sys.contentType.sys.id === "basics"
   );
-
+  const resources = basics.map((item: any) => item.fields.resources);
   return (
-    <div className="w-full min-h-screen ">
-      {learnBasics.map((item: any) => (
-        <Accordion
-          type="multiple"
-          className="bg-secondary rounded px-2 sm:px-4 text-white"
-        >
-          <AccordionItem value="item-1">
-            <AccordionTrigger className=" text-md sm:text-lg mt-40">
-              {item.fields.title2}
-            </AccordionTrigger>
-
-            <AccordionContent className="  flex w-full items-center gap-4 border-b mb-2   ">
-              <PiVideoFill className="text- h-5 w-5" />
-              <Link href={"/"} className="hover:underline line-clamp-1 ">
-                Yes. It adheres to the WAI-ARIA design pattern
-              </Link>
-            </AccordionContent>
-          </AccordionItem>
-        </Accordion>
-      ))}
+    <div className="w-full min-h-[80vh] bg-primary flex justify-center">
+      <div className="w-full flex flex-col items-center mt-20   ">
+        <div className="text-center flex flex-col ">
+          <h2 className="font-semibold text-2xl md:text-3xl my-10">
+            Video <span className="text-secondary">Leactures</span>
+          </h2>
+        </div>
+        <div className="w-full flex flex-col items-center justify-center">
+          {basics.map((item: any) => (
+            <Dropdown
+              trigger={item.fields.title1}
+              content={item.fields.videolinks}
+            />
+          ))}
+        </div>
+        <div className="text-start flex flex-col w-[50%] ">
+          <h4 className="font-semibold text-secondary text-xl mt-10 mb-2">
+            Resource:
+          </h4>
+          <Link href={resources}>{resources}</Link>
+        </div>
+      </div>
     </div>
   );
 }

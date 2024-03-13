@@ -30,7 +30,10 @@ function Quaters() {
         </p>
       </div>
       <div className="w-full flex flex-col justify-center items-center ">
-        <Dropdown />
+        {/* <Dropdown
+          trigger="TypeScript Leactures"
+          content="Fundamentals of Typescript"
+        /> */}
         <div className="sm:w-[60%] w-[90%] flex flex-col justify-center sm:mt-8 gap-3">
           <h5 className=" text-secondary text-start font-semibold text-lg md:text-xl">
             Assignments & Quizes:
