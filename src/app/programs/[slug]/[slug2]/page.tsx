@@ -1,7 +1,7 @@
-import Quaters from "@/components/Quaters/Quaters";
+import Quaters from "@/components/Programs/Quaters";
 import React from "react";
 
-function page({params} : {params: {slug: string}}) {
+function page({ params }: { params: { slug2: string } }) {
   return (
     <>
       <Quaters />
