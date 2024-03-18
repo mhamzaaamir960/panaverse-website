@@ -4,8 +4,8 @@ import Link from "next/link";
 import Dropdown from "./Dropdown";
 
 async function Basics() {
-  const data = await getData();
-  const basics = await data.items.filter(
+  const data: any = await getData();
+  const basics: any = await data.items.filter(
     (item: any) => item.sys.contentType.sys.id === "basics"
   );
   const resources = basics.map((item: any) => item.fields.resources);
@@ -25,7 +25,7 @@ async function Basics() {
             />
           ))}
         </div>
-        <div className="text-start flex flex-col w-[50%] ">
+        <div className="text-start flex flex-col  w-[50%] ">
           <h4 className="font-semibold text-secondary text-xl mt-10 mb-2">
             Resource:
           </h4>
