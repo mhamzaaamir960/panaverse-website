@@ -1,9 +1,16 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Blockchain from "@/assets/Blockchain.jpg";
 
-function ProgramsData({ data, index }: { data: any; index: number }) {
+function ProgramsData({
+  data,
+  image,
+  index,
+}: {
+  data: any;
+  image: any;
+  index: number;
+}) {
   const dummyData = [
     {
       fields: {
@@ -48,8 +55,10 @@ function ProgramsData({ data, index }: { data: any; index: number }) {
       <div className="relative top-20  w-full h-[350px] sm:h-[300px] flex items-center  ">
         <div className="w-full h-full absolute top-0 z-0">
           <Image
-            src={Blockchain}
+            src={image}
             alt="Image"
+            width={1000}
+            height={1000}
             className="w-full h-full object-cover "
           />
         </div>
