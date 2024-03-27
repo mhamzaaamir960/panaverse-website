@@ -50,7 +50,7 @@ function ProgramsData({
     },
   ];
   return (
-    <div className="w-full gap-2 min-h-screen flex flex-col bg-primary   ">
+    <div className="w-full gap-2 min-h-screen flex flex-col bg-white   ">
       {/* 1 */}
       <div className="relative top-20  w-full h-[350px] sm:h-[300px] flex items-center  ">
         <div className="w-full h-full absolute top-0 z-0">

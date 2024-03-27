@@ -4,7 +4,7 @@ import { TiTick } from "react-icons/ti";
 
 function Quaters() {
   return (
-    <div className="w-full min-h-screen bg-primary flex flex-col items-center p-4 mb-4 ">
+    <div className="w-full min-h-screen bg-white flex flex-col items-center p-4 mb-4 ">
       <div className="w-full mt-14 mb-5  text-center flex flex-col gap-2 justify-center items-center mx-auto p-2 ">
         <h2 className="font-semibold text-3xl md:text-4xl mt-10">
           Quarter <span className="text-secondary"># 1</span>

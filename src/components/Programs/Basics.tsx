@@ -10,7 +10,7 @@ async function Basics() {
   );
   const resources = basics.map((item: any) => item.fields.resources);
   return (
-    <div className="w-full min-h-[80vh] bg-primary flex justify-center">
+    <div className="w-full min-h-[80vh] bg-white flex justify-center">
       <div className="w-full flex flex-col items-center mt-20   ">
         <div className="text-center flex flex-col ">
           <h2 className="font-semibold text-2xl md:text-3xl my-10">

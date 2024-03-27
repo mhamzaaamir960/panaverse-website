@@ -23,7 +23,7 @@ async function Programs() {
             <Link
               key={item.fields.slug}
               href={`/programs/${item.fields.slug}`}
-              className={`hover:scale-110 transition-all ease-in-out duration-300 delay-100`}
+              className={`hover:scale-105 transition-all ease-in-out duration-300 delay-75`}
             >
               <div className="sm:w-80 sm:h-80 w-64 h-72 p-6  flex flex-col justify-center items-center rounded-xl  shadow-md bg-white shadow-red-500 cursor-pointer">
                 <h3 className=" text-xl sm:text-2xl text-center font-medium my-4">
