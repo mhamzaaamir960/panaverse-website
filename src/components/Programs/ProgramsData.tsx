@@ -17,7 +17,7 @@ function ProgramsData({
         title: "TypeScript",
         date: "Quater 1",
         description:
-          "hamzaA one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
+          "A one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
         quarter: "Q1",
       },
     },
@@ -26,7 +26,7 @@ function ProgramsData({
         title: "Modern Frontend Development",
         date: "Quater 2",
         description:
-          "hamzaA one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
+          "A one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
         quarter: "Q2",
       },
     },
@@ -35,7 +35,7 @@ function ProgramsData({
         title: "Solidity",
         date: "Quater 3",
         description:
-          "hamzaA one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
+          "A one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
         quarter: "Q3",
       },
     },
@@ -44,7 +44,7 @@ function ProgramsData({
         title: "Blockchain Developer",
         date: "Quater 4",
         description:
-          "hamzaA one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
+          "A one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
         quarter: "Q4",
       },
     },

@@ -1,10 +1,25 @@
 import Quaters from "@/components/Programs/Quaters";
+import getData from "@/lib/getData";
 import React from "react";
 
-function page({ params }: { params: { slug2: string } }) {
+async function page({ params }: { params: { slug2: string } }) {
+  const data = await getData();
+  const quarters = data.items.filter(
+    (item: any) => item.sys.contentType.sys.id === "quarters"
+  );
   return (
     <>
-      <Quaters />
+      {quarters.map((quarter: any) => {
+        return (
+          <div key={quarter.fields.title}>
+            {/* {params.slug2 === quarter.fields.slug && ( */}
+            <>
+              <Quaters data={quarter} />
+            </>
+            {/* )} */}
+          </div>
+        );
+      })}
     </>
   );
 }

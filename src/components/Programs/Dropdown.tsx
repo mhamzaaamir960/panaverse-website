@@ -17,7 +17,7 @@ function Dropdown({
   content: { link: string; title: string }[];
 }) {
   return (
-    <div className="w-[50%] min-w-[260px]  bg-secondary text-white focus:border-2 focus:border-secondary border-b rounded  ">
+    <div className="w-[60%] min-w-[200px]  bg-secondary text-white focus:border-2 focus:border-secondary border-b rounded  ">
       <Accordion type="single" className="rounded px-2 sm:px-2 " collapsible>
         <AccordionItem value="item-1  ">
           <AccordionTrigger className="text-md ">{trigger}</AccordionTrigger>
