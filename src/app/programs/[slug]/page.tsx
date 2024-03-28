@@ -9,13 +9,13 @@ async function page({ params }: { params: { slug: string } }) {
   );
   return (
     <>
-      {programsData.map(async (program: any, index: number) => {
+      {programsData.map(async (program: any) => {
         let image: any = await getImages(program.fields.backgroundImage.sys.id);
         return (
           <div key={program.fields.title}>
             {params.slug === program.fields.slug && (
               <>
-                <ProgramsData data={program} index={index} image={image} />
+                <ProgramsData data={program} image={image} />
               </>
             )}
           </div>

@@ -1,54 +1,14 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import getData from "@/lib/getData";
 
-function ProgramsData({
-  data,
-  image,
-  index,
-}: {
-  data: any;
-  image: any;
-  index: number;
-}) {
-  const dummyData = [
-    {
-      fields: {
-        title: "TypeScript",
-        date: "Quater 1",
-        description:
-          "A one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
-        quarter: "Q1",
-      },
-    },
-    {
-      fields: {
-        title: "Modern Frontend Development",
-        date: "Quater 2",
-        description:
-          "A one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
-        quarter: "Q2",
-      },
-    },
-    {
-      fields: {
-        title: "Solidity",
-        date: "Quater 3",
-        description:
-          "A one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
-        quarter: "Q3",
-      },
-    },
-    {
-      fields: {
-        title: "Blockchain Developer",
-        date: "Quater 4",
-        description:
-          "A one year blockchain program designed for absolute beginners getting Pakistan ready for the new era of blockchain, fintech, and smart contracts.",
-        quarter: "Q4",
-      },
-    },
-  ];
+async function ProgramsData({ data, image }: { data: any; image: any }) {
+  const $data = await getData();
+  const quarters = $data.items.filter(
+    (item: any) => item.sys.contentType.sys.id === "quarters"
+  );
+  quarters.sort((a: any, b: any) => a.fields.quarterNo - b.fields.quarterNo);
   return (
     <div className="w-full gap-2 min-h-screen flex flex-col bg-white   ">
       {/* 1 */}
@@ -59,7 +19,7 @@ function ProgramsData({
             alt="Image"
             width={1000}
             height={1000}
-            className="w-full h-full object-cover "
+            className="w-full h-full object-cover"
           />
         </div>
         <div className="z-1  mt-20 xs:mt-0  text-white relative  flex flex-col items-center justify-center w-full  gap-4 p-6  text-center ">
@@ -72,7 +32,7 @@ function ProgramsData({
         </div>
       </div>
 
-      <div className="w-full mt-14 mb-10  text-center flex flex-col gap-2 justify-center items-center ">
+      <div className="w-full mt-14 mb-8  text-center flex flex-col gap-2 justify-center items-center ">
         <h2 className="font-semibold text-2xl md:text-3xl mt-10">
           Program <span className="text-secondary">Structure</span>
         </h2>
@@ -80,45 +40,51 @@ function ProgramsData({
           4 Quarters program for complete {data.fields.title} Development
         </p>
       </div>
-      <div className="mt-4">
+      <div className="">
         <div className="flex w-full justify-center mb-6 ">
           <Link href={"/programs/learnbasics"}>
-            <div className="bg-white rounded shadow px-6 py-2 text-center border border-secondary shadow hover:scale-105 transition-all ease-in-out duration-300 delay-100 w-fit shrink-0  ">
-              <h4 className=" text-lg sm:text-xl md:text-2xl font-medium  ">
+            <div className="bg-white rounded shadow px-2 sm:px-6 sm:py-2 text-center border border-secondary shadow hover:scale-105 transition-all ease-in-out duration-300 delay-100 w-fit shrink-0  ">
+              <h4 className=" text-lg sm:text-xl font-medium  ">
                 Learn basics before Q1
               </h4>
 
-              <span className=" text-sm sm:text-lg text-gray-700">
+              <span className=" text-sm sm:text-md text-gray-700">
                 HTML / CSS / JavaScript
               </span>
             </div>
           </Link>
         </div>
         <div className=" p-4 w-4/5 mx-auto ">
-          <div className="   w-full    ">
-            {dummyData.map((event, index) => (
-              <div
-                key={index}
-                className="flex justify-center relative items-center h-full py-2 gap-10 "
-              >
-                <div
-                  className={`bg-white border border-gray-300 rounded-lg shadow-md p-4 md:w-2/5  z-[1]  w-fit ml-10 md:m-0  ${
-                    index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
-                  }`}
-                >
-                  <p className="font-semibold">{event.fields.title}</p>
-                  <p className="text-sm text-secondary text-gray-600">
-                    {event.fields.date}
-                  </p>
-                  <p className="text-sm mt-1">{event.fields.description}</p>
-                </div>
-                <div className="w-1  bg-secondary flex flex-col justify-center items-center absolute left-2 md:left-1/2 h-full max-h-fit   ">
-                  <div className="bg-white w-8 h-8 rounded-full flex justify-center items-center font-bold text-secondary border border-2 border-gray-200  ">
-                    {event.fields.quarter}
+          <div className="   w-full  ">
+            {quarters.map(
+              (quarter: any, index: number) =>
+                quarter.fields.id === data.fields.id && (
+                  // quarter.sort((a:number,b:number) =>)
+                  <div
+                    key={index}
+                    className="flex justify-center relative items-center h-full py-2 gap-10  "
+                  >
+                    <div
+                      className={` border border-gray-300 rounded-lg shadow-md p-4 md:w-2/5  z-[1]  w-fit ml-10 md:m-0 bg-primary  ${
+                        index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
+                      }`}
+                    >
+                      <p className="font-semibold">{quarter.fields.title}</p>
+                      <p className="text-sm text-secondary text-gray-600">
+                        Quarter {quarter.fields.quarterNo}
+                      </p>
+                      <p className="text-sm mt-1  line-clamp-6">
+                        {quarter.fields.description}
+                      </p>
+                    </div>
+                    <div className="w-1  bg-secondary flex flex-col justify-center items-center absolute left-2 md:left-1/2 h-full max-h-fit   ">
+                      <div className="bg-white w-8 h-8 rounded-full flex justify-center items-center font-bold text-secondary border border-2 border-gray-200  ">
+                        Q{quarter.fields.quarterNo}
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                )
+            )}
           </div>
         </div>
       </div>
