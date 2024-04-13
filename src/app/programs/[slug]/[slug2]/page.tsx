@@ -12,11 +12,11 @@ async function page({ params }: { params: { slug2: string } }) {
       {quarters.map((quarter: any) => {
         return (
           <div key={quarter.fields.title}>
-            {/* {params.slug2 === quarter.fields.slug && ( */}
-            <>
-              <Quaters data={quarter} />
-            </>
-            {/* )} */}
+            {params.slug2 === quarter.fields.slug2 && (
+              <>
+                <Quaters data={quarter} />
+              </>
+            )}
           </div>
         );
       })}

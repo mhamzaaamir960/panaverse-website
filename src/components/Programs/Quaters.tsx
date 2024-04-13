@@ -16,7 +16,7 @@ function Quaters({ data }: { data: any }) {
         <p className=" text-secondary font-medium text-sm ">
           Duration 13 weeks
         </p>
-        <h4 className="font-medium text-center text-lg sm:text-xl md:text-2xl">
+        <h4 className="font-medium w-[80%] text-center text-lg sm:text-xl md:text-2xl">
           {data.fields.quarterCore}
         </h4>
 
@@ -44,11 +44,17 @@ function Quaters({ data }: { data: any }) {
                   <h5 className="text-lg font-medium mb-2">{item.name}</h5>
                   {item.resources.map((item2: any, index: number) => (
                     <Link
-                      target="blank"
-                      href={item2.link}
+                      target={`${item2.link.includes("/") ? "blank" : "_self"}`}
+                      href={`${item2.link.includes("/") ? item2.link : ""}`}
                       className="flex flex-col gap-2  "
                     >
-                      <p className="hover:text-blue-500 w-fit transition-all duration-300 delay-75 ease-in-out">
+                      <p
+                        className={`${
+                          item2.link.includes("/")
+                            ? `hover:text-blue-500`
+                            : "cursor-default"
+                        } w-fit transition-all duration-300 delay-75 ease-in-out>`}
+                      >
                         {index + 1} - {item2.text}
                       </p>
                     </Link>
@@ -61,10 +67,12 @@ function Quaters({ data }: { data: any }) {
 
         {/* Dropdown */}
         <div className="sm:w-[80%] w-[90%] flex flex-col items-center justify-center sm:mt-8 gap-3 ">
-          <Dropdown
-            trigger={` ${data.fields.title} Video Leactures`}
-            content={data.fields.leactures}
-          />
+          {data.fields.leactures.length > 0 && (
+            <Dropdown
+              trigger={` ${data.fields.title} Video Leactures`}
+              content={data.fields.leactures}
+            />
+          )}
         </div>
 
         {/* Assignments */}

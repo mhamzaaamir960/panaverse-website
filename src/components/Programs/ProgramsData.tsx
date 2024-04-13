@@ -42,7 +42,7 @@ async function ProgramsData({ data, image }: { data: any; image: any }) {
       </div>
       <div className="">
         <div className="flex w-full justify-center mb-6 ">
-          <Link href={"/programs/learnbasics"}>
+          <Link href={"learnbasics"}>
             <div className="bg-white rounded shadow px-2 sm:px-6 sm:py-2 text-center border border-secondary shadow hover:scale-105 transition-all ease-in-out duration-300 delay-100 w-fit shrink-0  ">
               <h4 className=" text-lg sm:text-xl font-medium  ">
                 Learn basics before Q1
@@ -59,24 +59,25 @@ async function ProgramsData({ data, image }: { data: any; image: any }) {
             {quarters.map(
               (quarter: any, index: number) =>
                 quarter.fields.id === data.fields.id && (
-                  // quarter.sort((a:number,b:number) =>)
                   <div
                     key={index}
                     className="flex justify-center relative items-center h-full py-2 gap-10  "
                   >
-                    <div
-                      className={` border border-gray-300 rounded-lg shadow-md p-4 md:w-2/5  z-[1]  w-fit ml-10 md:m-0 bg-primary  ${
-                        index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
-                      }`}
-                    >
-                      <p className="font-semibold">{quarter.fields.title}</p>
-                      <p className="text-sm text-secondary text-gray-600">
-                        Quarter {quarter.fields.quarterNo}
-                      </p>
-                      <p className="text-sm mt-1  line-clamp-6">
-                        {quarter.fields.description}
-                      </p>
-                    </div>
+                    <Link href={`${data.fields.slug}/${quarter.fields.slug2}`}>
+                      <div
+                        className={` border border-gray-300 rounded-lg shadow-md p-4 md:w-2/5  z-[1]  w-fit ml-10 md:m-0 bg-primary  ${
+                          index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
+                        }`}
+                      >
+                        <p className="font-semibold">{quarter.fields.title}</p>
+                        <p className="text-sm text-secondary text-gray-600">
+                          Quarter {quarter.fields.quarterNo}
+                        </p>
+                        <p className="text-sm mt-1  line-clamp-5">
+                          {quarter.fields.description}
+                        </p>
+                      </div>
+                    </Link>
                     <div className="w-1  bg-secondary flex flex-col justify-center items-center absolute left-2 md:left-1/2 h-full max-h-fit   ">
                       <div className="bg-white w-8 h-8 rounded-full flex justify-center items-center font-bold text-secondary border border-2 border-gray-200  ">
                         Q{quarter.fields.quarterNo}
