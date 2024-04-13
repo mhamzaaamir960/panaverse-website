@@ -22,6 +22,7 @@ async function Basics() {
             <Dropdown
               trigger={item.fields.title1}
               content={item.fields.videolinks}
+              key={item.fields.title1}
             />
           ))}
         </div>

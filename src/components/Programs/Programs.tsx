@@ -20,20 +20,21 @@ async function Programs() {
       <div className="flex flex-wrap mt-6 gap-8 mx-10 justify-center items-center w-11/12 mb-10">
         {programsData.map((item: any) => {
           return (
-            <Link
-              key={item.fields.slug}
-              href={`/programs/${item.fields.slug}`}
-              className={`hover:scale-105 transition-all ease-in-out duration-300 delay-75`}
+            <div
+              className={`hover:scale-105 transition-all ease-in-out duration-300 delay-75 sm:w-80 sm:h-80 w-64 h-72 p-6  flex flex-col justify-center items-center rounded-xl shadow hover:shadow-md  bg-white shadow-red-500 cursor-pointer`}
             >
-              <div className="sm:w-80 sm:h-80 w-64 h-72 p-6  flex flex-col justify-center items-center rounded-xl  shadow-md bg-white shadow-red-500 cursor-pointer">
+              <Link
+                key={item.fields.slug}
+                href={`/programs/${item.fields.slug}`}
+              >
                 <h3 className=" text-xl sm:text-2xl text-center font-medium my-4">
                   {item.fields.title}
                 </h3>
                 <p className="w-64 h-40 text-center overflow-hidden p-2 text-stone-950">
                   {item.fields.description}
                 </p>
-              </div>
-            </Link>
+              </Link>
+            </div>
           );
         })}
       </div>

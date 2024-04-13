@@ -39,26 +39,30 @@ function Quaters({ data }: { data: any }) {
               Course Outline:
             </h5>
             <div className="sm:w-[60%] w-[90%] text-start sm:text-justify ml-4   ">
-              {data.fields.courseOutline.map((item: any) => (
-                <div className="mb-2">
+              {data.fields.courseOutline.map((item: any, index: number) => (
+                <div key={index} className="mb-2">
                   <h5 className="text-lg font-medium mb-2">{item.name}</h5>
-                  {item.resources.map((item2: any, index: number) => (
-                    <Link
-                      target={`${item2.link.includes("/") ? "blank" : "_self"}`}
-                      href={`${item2.link.includes("/") ? item2.link : ""}`}
-                      className="flex flex-col gap-2  "
-                    >
-                      <p
-                        className={`${
-                          item2.link.includes("/")
-                            ? `hover:text-blue-500`
-                            : "cursor-default"
-                        } w-fit transition-all duration-300 delay-75 ease-in-out>`}
+                  {item.resources &&
+                    item.resources.map((item2: any, index: number) => (
+                      <Link
+                        target={`${
+                          item2.link.includes("https://") ? "blank" : "_self"
+                        }`}
+                        href={`${item2.link.includes("https://") ? item2.link : ""}`}
+                        key={index}
+                        className="flex flex-col gap-2  "
                       >
-                        {index + 1} - {item2.text}
-                      </p>
-                    </Link>
-                  ))}
+                        <p
+                          className={`${
+                            item2.link.includes("/")
+                              ? `hover:text-blue-500`
+                              : "cursor-default"
+                          } w-fit transition-all duration-300 delay-75 ease-in-out>`}
+                        >
+                          {index + 1} - {item2.text}
+                        </p>
+                      </Link>
+                    ))}
                 </div>
               ))}
             </div>

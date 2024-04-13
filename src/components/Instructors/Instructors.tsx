@@ -2,56 +2,60 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import getData, {getImages} from "@/lib/getData";
+import getData, { getImages } from "@/lib/getData";
 
 async function Instructors() {
-  
   const data = await getData();
   const instructorsData = await data.items.filter(
     (item: any) => item.sys.contentType.sys.id === "instructors"
   );
-  // console.log(instructorsData[0])
+
   return (
-    <section className="w-full min-h-[600px] flex flex-col justify-center items-center bg-white">
+    <section className="w-full min-h-[400px] flex flex-col justify-center items-center bg-white mb-6">
       <div className="text-center flex flex-col ">
-        <h2 className="font-semibold text-2xl md:text-3xl mt-10">
+        <h2 className="font-semibold text-2xl md:text-3xl mt-6">
           Meet our Executive
           <span className="text-secondary"> Instructors</span>
         </h2>
       </div>
 
-      <div className="w-11/12 flex flex-wrap items-center justify-center gap-6 my-14 ">
+      <div className="flex flex-wrap justify-center mt-10">
         {instructorsData.map(async (item: any, index: number) => {
           let image: any = await getImages(item.fields.image.sys.id);
+
           return (
             <div
               key={index}
-              className="sm:w-[450px] flex sm:justify-evenly items-center flex-wrap w-[300px] p-4 justify-center sm:h-40 rounded shadow-xl  bg-primary border-2 border-secondary"
+              className="bg-white border-y border-secondary border-gray-200 rounded-lg shadow-md overflow-hidden m-4 transition-all duration-500 delay-75 ease-in-out hover:scale-95  "
             >
-              <div className="flex shrink-0 items-center justify-center">
-                <Image
-                  alt="Image"
-                  width={130}
-                  height={130}
-                  src={image}
-                  className="rounded-full border-2 shrink-0"
-                />
-              </div>
-
-              <div className="flex  flex-col justify-center items-center sm:items-start ">
-                <h4 className="text-2xl font-semibold flex shrink-0">
+              <div className="p-4">
+                <div className="relative h-24 w-24 mx-auto mb-4">
+                  <Image
+                    src={image}
+                    alt="Instructor"
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-full"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-center mb-2">
                   {item.fields.name}
-                </h4>
-                <p className="text-lg text-gray-800 mb-2 ">
+                </h3>
+                <p className="text-sm text-gray-600 text-center mb-4">
                   {item.fields.rank}
                 </p>
-
-                <div className="flex gap-2">
-                  <Link className="text-3xl " href={item.fields.Linkedin}>
-                    <FaLinkedin />
+                <div className="flex justify-center mb-4">
+                  <Link
+                    href={item.fields.Linkedin}
+                    className="text-[#0077B5] hover:text-[#3782aa] mr-3"
+                  >
+                    <FaLinkedin className="text-2xl" />
                   </Link>
-                  <Link className="text-3xl " href={item.fields.github}>
-                    <FaGithub />
+                  <Link
+                    href={item.fields.github}
+                    className="text-gray-600 hover:text-gray-700"
+                  >
+                    <FaGithub className="text-2xl" />
                   </Link>
                 </div>
               </div>

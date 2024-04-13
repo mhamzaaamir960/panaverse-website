@@ -1,3 +1,4 @@
+import { Hybridlearning } from "@/components/HybridLearning/Hybridlearning";
 import {
   Community,
   HeroSection,
@@ -5,6 +6,7 @@ import {
   Programs,
   Testimonials,
 } from "@/components/index";
+import { Nutshell } from "@/components/NutshellProgram/Nutshell";
 
 export default function Home() {
   return (
@@ -12,6 +14,8 @@ export default function Home() {
       <HeroSection />
       <Community />
       <Programs />
+      <Nutshell />
+      <Hybridlearning />
       <Instructors />
       <Testimonials />
     </>
