@@ -11,7 +11,10 @@ async function Instructors() {
   );
 
   return (
-    <section className="w-full min-h-[400px] flex flex-col justify-center items-center bg-white mb-6">
+    <section
+      id="instructors"
+      className="w-full min-h-[400px] flex flex-col justify-center items-center bg-white mb-6"
+    >
       <div className="text-center flex flex-col ">
         <h2 className="font-semibold text-2xl md:text-3xl mt-6">
           Meet our Executive
