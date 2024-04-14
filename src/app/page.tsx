@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer/Footer";
 import { Hybridlearning } from "@/components/HybridLearning/Hybridlearning";
 import {
   Community,
@@ -18,6 +19,7 @@ export default function Home() {
       <Hybridlearning />
       <Instructors />
       <Testimonials />
+      <Footer />
     </>
   );
 }

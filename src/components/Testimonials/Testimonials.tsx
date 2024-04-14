@@ -15,7 +15,7 @@ async function Testimonials() {
         </h2>
       </div>
 
-      <div className="flex flex-wrap w-4/5 gap-16 justify-center mt-20">
+      <div className="flex flex-wrap w-4/5 gap-16 justify-center mt-20 mb-12">
         {testimonialsData.map(async (item: any, index: number) => {
           let image: any = await getImages(item.fields.image.sys.id);
           return (
