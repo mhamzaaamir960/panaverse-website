@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import PanaverseLogo from "@/assets/PanaverseLogo.jpg";
+import PanaverseLogo from "@/assets/Images/PanaverseLogo.jpg";
 
 function Footer2() {
   return (

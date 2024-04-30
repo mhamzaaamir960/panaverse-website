@@ -1,6 +1,4 @@
-
-
-var contentful = require("contentful");
+const contentful = require("contentful");
 
 const client = contentful.createClient({
   accessToken : process.env.CONTENTFUL_ACCESS_TOKEN ,

@@ -18,15 +18,15 @@ export const menu: Type[] = [
   },
   {
     title: "Available Programs",
-    link: "/programs",
+    link: "#programs",
   },
   {
     title: "Instructors",
-    link: "/",
+    link: "#instructors",
   },
   {
     title: "Testimonials",
-    link: "/",
+    link: "#testimonials",
   },
   {
     title: "About",

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import HybridLearning from "@/assets/HybridLearning.png";
+import HybridLearning from "@/assets/Images/HybridLearning.png";
 
 export function Hybridlearning() {
   return (
@@ -35,7 +35,7 @@ export function Hybridlearning() {
           alt="Image of Hybrid Learning"
           width={400}
           height={400}
-          className="w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] "
+          className="min-w-[200px] w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] "
         />
       </div>
     </section>

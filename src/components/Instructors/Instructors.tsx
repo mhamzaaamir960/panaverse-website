@@ -35,9 +35,9 @@ async function Instructors() {
                 <div className="relative h-24 w-24 mx-auto mb-4">
                   <Image
                     src={image}
-                    alt="Instructor"
-                    layout="fill"
-                    objectFit="cover"
+                    alt="Instructor image"
+                    width={100}
+                    height={100}
                     className="rounded-full"
                   />
                 </div>

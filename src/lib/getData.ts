@@ -28,7 +28,7 @@ export async function getImages(asset_id: any) {
       console.log("failed to fetch data");
       throw new Error("Failed to fetch data");
     }
-    return "https:" + data.fields.file.url;
+    return "https://" + data.fields.file.url;
   } catch (err) {
     console.log(err);
   }
@@ -42,7 +42,7 @@ export async function getHeroSectionData() {
     const res = await fetch(url, { cache: "no-store" });
     const data = await res.json();
     if (!res.ok) {
-      console.log("failed to fetch data");
+      console.log("failed to fetch dataa");
       throw new Error("Failed to fetch data");
     }
     return data;

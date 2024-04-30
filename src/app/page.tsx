@@ -17,7 +17,7 @@ export default function Home() {
       <Programs />
       <Nutshell />
       <Hybridlearning />
-      <Instructors />
+      {/* <Instructors /> */}
       <Testimonials />
       <Footer />
     </>

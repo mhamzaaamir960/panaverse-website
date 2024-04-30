@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import PanaverseLogo from "@/assets/PanaverseLogo.jpg";
+import PanaverseLogo from "@/assets/Images/PanaverseLogo.jpg";
 
 function Logo() {
   return (
@@ -9,10 +9,11 @@ function Logo() {
       <Link href={"/"}>
         <Image
           src={PanaverseLogo}
+          priority
           alt="Panaverse DAO Logo"
           height={100}
           width={100}
-          className=""
+          className="shrink-0"
         />
       </Link>
     </div>

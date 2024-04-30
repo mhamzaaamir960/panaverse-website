@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import PanaverseLogo from "@/assets/PanaverseLogo.jpg";
+import PanaverseLogo from "@/assets/Images/PanaverseLogo.jpg";
 import { SiMinutemailer } from "react-icons/si";
 import { menu, support, icons } from "./data";
 

@@ -89,8 +89,8 @@ function Quaters({ data }: { data: any }) {
               By the end of this quarter we do the following projects.
             </p>
             <ul className="ml-2">
-              {data.fields.projects.map((item: any) => (
-                <li className="flex gap-2 items-center">
+              {data.fields.projects.map((item: any, index:number) => (
+                <li key={index} className="flex gap-2 items-center">
                   <TiTick className="text-lg text-teal-600" /> {item.name}
                 </li>
               ))}

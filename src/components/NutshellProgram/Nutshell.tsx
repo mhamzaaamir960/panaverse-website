@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import It_student from "@/assets/IT_student.png";
+import It_student from "@/assets/Images/IT_student.png";
 
 export function Nutshell() {
   return (
@@ -12,7 +12,7 @@ export function Nutshell() {
           alt="Image of IT student"
           width={400}
           height={400}
-          className="w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px] "
+          className="min-w-[200px] w-[260px] h-[260px] sm:w-[300px] sm:h-[300px] md:w-[400px] md:h-[400px]"
         />
       </div>
 

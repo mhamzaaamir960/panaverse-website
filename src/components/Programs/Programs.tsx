@@ -10,7 +10,7 @@ async function Programs() {
   // console.log(programsData)
 
   return (
-    <section className="w-full min-h-[600px] bg-primary flex flex-col items-center gap-10">
+    <section id="programs" className="w-full min-h-[600px] bg-primary flex flex-col items-center gap-10">
       <div className="text-center flex flex-col ">
         <h2 className="font-semibold text-2xl md:text-3xl mt-10">
           Available <span className="text-secondary">Programs</span>
@@ -22,6 +22,7 @@ async function Programs() {
           return (
             <div
               className={`hover:scale-105 transition-all ease-in-out duration-300 delay-75 sm:w-80 sm:h-80 w-64 h-72 p-6  flex flex-col justify-center items-center rounded-xl shadow hover:shadow-md  bg-white shadow-red-500 cursor-pointer`}
+              key={item.fields.slug}
             >
               <Link
                 key={item.fields.slug}

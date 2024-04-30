@@ -18,16 +18,17 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "contentful": "^10.6.14",
-    "framer-motion": "^10.16.16",
+    "embla-carousel-autoplay": "^8.0.2",
+    "embla-carousel-react": "^8.0.2",
+    "framer-motion": "^10.18.0",
     "lucide-react": "^0.302.0",
     "next": "14.0.4",
+    "next-video": "^1.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.49.2",
-    "react-icons": "^4.12.0",
+    "react-icons": "^5.1.0",
     "tailwind-merge": "^2.2.1",
-    "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.22.4"
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
     "@types/node": "^20",
