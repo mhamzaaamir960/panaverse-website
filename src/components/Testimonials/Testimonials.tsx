@@ -1,14 +1,15 @@
 import React from "react";
 import getData, { getImages } from "@/lib/getData";
 import Cards from "./Cards";
-import Plugin from "./Plugin";
-import Carousal from "./Carousal"
-import {  CarouselContent } from "@/components/ui/carousel";
 
 async function Testimonials() {
   const data = await getData();
   const testimonialsData = await data.items.filter(
     (item: any) => item.sys.contentType.sys.id === "testimonials"
+  );
+
+  const images = await Promise.all(
+    testimonialsData.map((item: any) => getImages(item.fields.image.sys.id))
   );
 
   return (
@@ -22,23 +23,7 @@ async function Testimonials() {
         </h2>
       </div>
 
-     <Carousal >
-        <CarouselContent className="mt-20 flex gap-x-12 flex justify-center">
-          {testimonialsData.map(async (item: any, index: number) => {
-            let image: any = await getImages(item.fields.image.sys.id);
-
-            return (
-              <Cards
-                image={image}
-                name={item.fields.name}
-                rank={item.fields.rank}
-                description={item.fields.description}
-                index={index}
-              />
-            );
-          })}
-        </CarouselContent>
-      </Carousal>
+      <Cards images={images} data={testimonialsData} />
     </section>
   );
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import PanaverseLogo from "@/assets/Images/PanaverseLogo.jpg";
+import PanaverseLogo from "@/assets/Images/PanaverseLogo.png";
 
 function Logo() {
   return (
@@ -13,6 +13,7 @@ function Logo() {
           alt="Panaverse DAO Logo"
           height={100}
           width={100}
+          style={{ width: "auto", height: "auto" }}
           className="shrink-0"
         />
       </Link>

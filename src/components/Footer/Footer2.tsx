@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import PanaverseLogo from "@/assets/Images/PanaverseLogo.jpg";
+import PanaverseLogo from "@/assets/Images/PanaverseLogo.png";
 
 function Footer2() {
   return (
@@ -9,8 +9,10 @@ function Footer2() {
         <Image
           src={PanaverseLogo}
           alt="Panaverse Logo"
+          priority
           width={100}
           height={100}
+          style={{width:"auto", height:"auto"}}
           className="shrink-0 "
         />
       </div>

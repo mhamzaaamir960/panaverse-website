@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import PanaverseLogo from "@/assets/Images/PanaverseLogo.jpg";
+import PanaverseLogo from "@/assets/Images/PanaverseLogo.png";
 import { SiMinutemailer } from "react-icons/si";
 import { menu, support, icons } from "./data";
 
@@ -15,8 +15,10 @@ function Footer() {
             <Image
               src={PanaverseLogo}
               alt="Panaverse Logo"
+              priority
               width={170}
               height={170}
+              style={{width:"auto", height:"auto"}}
               className="shrink-0 "
             />
           </div>
