@@ -15,15 +15,19 @@ async function page({ params }: { params: { slug: string } }) {
   const programsData = data.items.filter(
     (item: any) => item.sys.contentType.sys.id === "programs"
   );
+
+  const images = await Promise.all(
+    programsData.map((item: any) => getImages(item.fields.image.sys.id))
+  );
+
   return (
     <>
-      {programsData.map(async (program: any) => {
-        let image: any = await getImages(program.fields.backgroundImage.sys.id);
+      {programsData.map((program: any, index: number) => {
         return (
           <div key={program.fields.title}>
             {params.slug === program.fields.slug && (
               <>
-                <ProgramsData data={program} image={image} />
+                <ProgramsData data={program} image={images[index]} />
               </>
             )}
           </div>
