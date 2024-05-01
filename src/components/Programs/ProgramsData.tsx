@@ -65,7 +65,7 @@ async function ProgramsData({ data, image }: { data: any; image: any }) {
                     key={index}
                     className="flex justify-center relative items-center h-full py-2 gap-10  "
                   >
-                    <Link href={`${data.fields.slug}/${quarter.fields.slug2}`}>
+                    <Link href={`${data.fields.slug}/quaters/${quarter.fields.slug2}`}>
                       <div
                         className={` border border-gray-300 rounded-lg shadow-md p-4 md:w-2/5  z-[1]  w-fit ml-10 md:m-0 bg-primary  ${
                           index % 2 === 0 ? "md:mr-auto" : "md:ml-auto"
