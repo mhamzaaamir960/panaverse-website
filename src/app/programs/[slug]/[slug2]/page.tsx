@@ -7,7 +7,7 @@ export async function generateStaticParams() {
   const quarters = data.items.filter(
     (item: any) => item.sys.contentType.sys.id === "quarters"
   );
-  return quarters.map((quarter: any) => ({ slug: quarter.fields.slug }));
+  return quarters.map((quarter: any) => ({ slug2: quarter.fields.slug2 }));
 }
 
 async function page({ params }: { params: { slug2: string } }) {
