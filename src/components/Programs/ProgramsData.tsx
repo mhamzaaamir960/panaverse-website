@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import getData from "@/lib/getData";
 
+
 async function ProgramsData({ data, image }: { data: any; image: any }) {
   const $data = await getData();
   const quarters = $data.items.filter(
