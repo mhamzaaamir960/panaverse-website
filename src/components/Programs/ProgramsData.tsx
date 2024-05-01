@@ -20,6 +20,7 @@ async function ProgramsData({ data, image }: { data: any; image: any }) {
             alt="Image"
             width={1000}
             height={1000}
+            priority
             className="w-full h-full object-cover"
           />
         </div>
