@@ -10,7 +10,7 @@ async function HeroSection() {
     <main className=" min-h-screen sm:min-h-[70vh] lg:min-h-screen w-full bg-primary flex flex-wrap justify-center md:justify-evenly  p-6 items-center relative top-0  ">
       <div className="w-full md:w-1/2 mt-32 md:mt-14 flex flex-col gap-2   ">
         <p className="text-secondary text-base sm:text-lg font-medium">
-          {data.fields.paragraph}
+          {data.fields.paragraph} Hamza
         </p>
         <h1 className=" text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold w-full ">
           {data.fields.title}
