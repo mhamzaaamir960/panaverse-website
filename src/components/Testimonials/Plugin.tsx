@@ -3,7 +3,7 @@ import React, { ReactNode, useRef } from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Carousel } from "../ui/carousel";
 
-function C({ children }: { children: ReactNode }) {
+function Plugin({ children }: { children: ReactNode }) {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
   return (
     <Carousel

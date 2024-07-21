@@ -2,7 +2,7 @@ async function getData() {
   try {
     const url = `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`;
 
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url);
     const data = await res.json();
 
     if (!res.ok) {
@@ -21,14 +21,14 @@ export async function getImages(asset_id: any) {
   try {
     const url = `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/assets/${asset_id}?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`;
 
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url);
     const data = await res.json();
 
     if (!res.ok) {
       console.log("failed to fetch data");
       throw new Error("Failed to fetch data");
     }
-    return "https://" + data.fields.file.url;
+    return "https:" + data.fields.file.url;
   } catch (err) {
     console.log(err);
   }
@@ -39,7 +39,7 @@ export async function getHeroSectionData() {
     const url = `https://cdn.contentful.com/spaces/${process.env.CONTENTFUL_SPACE_ID}/environments/${process.env.CONTENTFUL_ENVIRONMENT}/entries/5Jy3vOgkmz8G0hPdSk2WvL
 ?access_token=${process.env.CONTENTFUL_ACCESS_TOKEN}`;
 
-    const res = await fetch(url, { cache: "no-store" });
+    const res = await fetch(url);
     const data = await res.json();
     if (!res.ok) {
       console.log("failed to fetch dataa");
