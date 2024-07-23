@@ -15,7 +15,6 @@
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
-    "build": "^0.1.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "contentful": "^10.6.14",
@@ -27,11 +26,7 @@
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.1.0",
-<<<<<<< HEAD
     "sharp": "^0.33.4",
-=======
-    "sharp": "^0.33.3",
->>>>>>> a9a2f7505e269d222b125ae12aab6ac970033841
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7"
   },
