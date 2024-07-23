@@ -3,16 +3,16 @@ import getData from "@/lib/getData";
 import React from "react";
 
 export async function generateStaticParams() {
-  const data = await getData();
-  const quarters = data.items.filter(
+  const data: any = await getData();
+  const quarters: any = data.items.filter(
     (item: any) => item.sys.contentType.sys.id === "quarters"
   );
   return quarters.map((quarter: any) => ({ slug2: quarter.fields.slug2 }));
 }
 
 async function page({ params }: { params: { slug2: string } }) {
-  const data = await getData();
-  const quarters = data.items.filter(
+  const data: any = await getData();
+  const quarters: any = data.items.filter(
     (item: any) => item.sys.contentType.sys.id === "quarters"
   );
   return (

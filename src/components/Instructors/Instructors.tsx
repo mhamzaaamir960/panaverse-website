@@ -39,6 +39,7 @@ async function Instructors() {
                     <Image
                       src={images[index]}
                       alt={`${item.fields.name} image`}
+                      priority
                       width={100}
                       height={100}
                       className="rounded-full"
