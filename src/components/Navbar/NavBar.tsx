@@ -4,9 +4,9 @@ import Desktop from "./Desktop";
 
 function NavBar() {
   return (
-    <>
+    <div className=" flex justify-center w-full">
       <Desktop />
-    </>
+    </div>
   );
 }
 
